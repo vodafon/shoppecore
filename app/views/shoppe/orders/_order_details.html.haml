@@ -1,33 +1,23 @@
 .details
   .left
     %dl
-      %dt Name
+      %dt= I18n.translate("shoppe.words.name")
       %dd= @order.full_name
-      %dt Company
-      %dd= @order.company.blank? ? '-' : @order.company
-      %dt Billing#{@order.separate_delivery_address? ? '' : '/Delivery'} Address
+      %dt #{I18n.translate("shoppe.words.billing")}#{@order.separate_delivery_address? ? '' : "/" + I18n.translate("shoppe.words.delivery")} #{I18n.translate("shoppe.words.address")}
       %dd= @order.billing_address1
       %dd= @order.billing_address2
-      %dd= @order.billing_address3
-      %dd= @order.billing_address4
-      %dd= @order.billing_postcode
-      %dd= @order.billing_country.try(:name)
       - if @order.separate_delivery_address?
-        %dt Delivery Address
+        %dt= I18n.translate("shoppe.words.delivery") I18n.translate("shoppe.words.address")
         %dd= @order.delivery_name
         %dd= @order.delivery_address1
         %dd= @order.delivery_address2
-        %dd= @order.delivery_address3
-        %dd= @order.delivery_address4
-        %dd= @order.delivery_postcode
-        %dd= @order.delivery_country.try(:name)
   .right
     %dl
-      %dt E-Mail Address
+      %dt= I18n.translate("shoppe.words.email")
       %dd= mail_to @order.email_address
-      %dt Telephone
+      %dt= I18n.translate("shoppe.words.telephone")
       %dd= @order.phone_number
-      %dt Weight
+      %dt= I18n.translate("shoppe.words.weight")
       %dd= number_to_weight @order.total_weight
       - if @order.received?
         %dt Build Time

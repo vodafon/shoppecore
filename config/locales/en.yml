@@ -28,6 +28,15 @@ en:
     cancel: Cancel
     edit: Edit
 
+    words:
+      name: Name
+      billing: Billing
+      delivery: Delivery
+      address: Address
+      email: Email
+      telephone: Telephone
+      weight: Weight
+
     settings:
       
       types:
