@@ -11,6 +11,7 @@ en:
         users: Users
         countries: Countries
         settings: Settings
+        logout: Logout
         
     settings:
       
