@@ -12,7 +12,7 @@ en:
         countries: Countries
         settings: Settings
         logout: Logout
-        goto: &larr; Goto Store
+        goto: Goto Store
         
     orders:
       page_title: Orders
