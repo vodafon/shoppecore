@@ -33,6 +33,8 @@ en:
       consigment_number: Consigment Number
       invoice_number: Invoice Number
       mark_as_shipping: Mark as shipping
+      delivery_address: Delivery Address
+      delivery_name: Delivery Name
 
     words:
       name: Name
@@ -47,6 +49,7 @@ en:
       notes: Notes
       first_name: First Name
       last_name: Last Name
+      add: Add
 
     settings:
       
