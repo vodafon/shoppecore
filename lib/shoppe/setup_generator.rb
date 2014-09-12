@@ -4,10 +4,18 @@ module Shoppe
     
     def create_route
       route 'mount Shoppe::Engine => "/shoppe"'
+      route "get 'product/:permalink' => 'products#show', :as => 'product'"
+      route "post 'product/:permalink' => 'products#buy'"
+      route "root :to => 'products#index'"
+      route "get 'basket' => 'orders#show'"
+      route "delete 'basket' => 'orders#destroy'"
+      route "match 'checkout' => 'orders#checkout', :as => 'checkout', :via => [:get, :patch]"
+      route "match 'checkout/pay' => 'orders#payment', :as => 'checkout_payment', :via => [:get, :post]"
+      route "match 'checkout/confirm' => 'orders#confirmation', :as => 'checkout_confirmation', :via => [:get, :post]"
     end
 
     def create_initializer_file
-      create_file "app/controllers/products2_controller.rb", <<-eos 
+      create_file "app/controllers/products_controller.rb", <<-eos 
 class ProductsController < ApplicationController
   def index
     @products = Shoppe::Product.root.ordered.includes(:product_category, :variants)
