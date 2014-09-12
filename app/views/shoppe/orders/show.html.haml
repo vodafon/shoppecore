@@ -1,4 +1,4 @@
-- @page_title = I18n.translate("shoppe.orders.page_title") + ' #' + @order.number
+- @page_title = I18n.translate("shoppe.orders.one") + ' #' + @order.number
 
 = content_for :header do
   %p.buttons
@@ -6,7 +6,7 @@
     - if @order.accepted?
       = link_to I18n.translate("shoppe.orders.despatch_note"), [:despatch_note, @order], :class => 'button', :rel => 'print'
     = link_to I18n.translate("shoppe.orders.back"), :orders, :class => 'button grey'
-  %h2.orders #{I18n.translate("shoppe.orders.page_title")} <b>##{@order.number}</b>
+  %h2.orders #{I18n.translate("shoppe.orders.one")} <b>##{@order.number}</b>
 
 #order
 

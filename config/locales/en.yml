@@ -28,6 +28,7 @@ en:
       one: Order
       one_back: Back to order
       ordered_products: Ordered Products
+      build_time: Build Time
 
     words:
       name: Name

@@ -11,16 +11,16 @@
         %dd= @order.delivery_name
         %dd= @order.delivery_address1
         %dd= @order.delivery_address2
-  .right
-    %dl
       %dt= I18n.translate("shoppe.words.email")
       %dd= mail_to @order.email_address
       %dt= I18n.translate("shoppe.words.telephone")
       %dd= @order.phone_number
+  .right
+    %dl
       %dt= I18n.translate("shoppe.words.weight")
       %dd= number_to_weight @order.total_weight
       - if @order.received?
-        %dt Build Time
+        %dt= I18n.t("shoppe.orders.build_time")
         %dd= distance_of_time_in_words(@order.created_at, @order.received_at)
       - if @order.invoiced?
         %dt Invoice Number

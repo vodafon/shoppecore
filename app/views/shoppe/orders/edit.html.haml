@@ -17,5 +17,5 @@
     = render 'order_items_form', :f => f
 
   %p.submit
-    = f.submit I18n.t("shoppe.words.save") + I18n.t("shoppe.orders.one"), :class => 'button green'
+    = f.submit I18n.t("shoppe.words.save") + " " + I18n.t("shoppe.orders.one"), :class => 'button green'
     = link_to "Cancel", @order, :class => 'button'
