@@ -24,12 +24,12 @@ nav.sidebar {
 		padding-left:80px;
 		padding-top:28px;
 		h1 a {
-			display:block;
-			width:72px;
-			height:16px;
-			background:image-url('shoppe/shoppe.svg') no-repeat;
-			background-size:72px 16px;
-			text-indent:-40000px;
+          color: #fff;
+          display: block;
+          font-size: 20px;
+          height: 22px;
+          text-decoration: none;
+          width: 72px;
 		}
 		p { color:#fff; font-size:0.9em; margin-top:4px; }
 	}
