@@ -19,7 +19,7 @@ en:
       new_order: New Order
       search_order: Search Order
       back: Back to orders
-      order_products: Order Products
+      ordered_products: Order Products
       create_order: Create Order
 
     cancel: Cancel
