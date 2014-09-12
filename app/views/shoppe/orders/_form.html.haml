@@ -1,10 +1,10 @@
 = field_set_tag "Billing Address" do
   .splitContainer
     %dl.third
-      %dt= f.label :first_name
+      %dt= f.label I18n.t("shoppe.words.first_name")
       %dd= f.text_field :first_name, :class => 'focus text'
     %dl.third
-      %dt= f.label :last_name
+      %dt= f.label I18n.t("shoppe.words.last_name")
       %dd= f.text_field :last_name, :class => 'text'
     %dl.third
       %dt= f.label :company

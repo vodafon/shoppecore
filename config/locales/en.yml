@@ -29,6 +29,10 @@ en:
       one_back: Back to order
       ordered_products: Ordered Products
       build_time: Build Time
+      balance: Order Balance
+      consigment_number: Consigment Number
+      invoice_number: Invoice Number
+      mark_as_shipping: Mark as shipping
 
     words:
       name: Name
@@ -41,6 +45,8 @@ en:
       cancel: Cancel
       edit: Edit
       notes: Notes
+      first_name: First Name
+      last_name: Last Name
 
     settings:
       

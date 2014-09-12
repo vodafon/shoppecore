@@ -23,17 +23,17 @@
         %dt= I18n.t("shoppe.orders.build_time")
         %dd= distance_of_time_in_words(@order.created_at, @order.received_at)
       - if @order.invoiced?
-        %dt Invoice Number
+        %dt= I18n.t("shoppe.orders.invoice_number")
         %dd= @order.invoice_number
-      %dt Order Balance
+      %dt= I18n.t("shoppe.orders.balance")
       %dd= boolean_tag @order.paid_in_full?, nil, :true_text => number_to_currency(@order.balance), :false_text => number_to_currency(@order.balance)
     - if @order.accepted? && !@order.shipped?
       = form_tag [:ship, @order] do
         %dl.form
-          %dt.padding= label_tag 'consignment_number', 'Consignment Number'
+          %dt.padding= label_tag 'consignment_number', I18n.t("shoppe.orders.consigment_number")
           %dd= text_field_tag 'consignment_number', '', :class => 'text'
         %dl.form
-          %dd= submit_tag "Mark as shipped", :class => 'button green button-mini'
+          %dd= submit_tag I18n.t("shoppe.orders.mark_as_shipping"), :class => 'button green button-mini'
     
     - unless @order.accepted? || @order.rejected?
       %dl.form
