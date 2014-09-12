@@ -14,12 +14,12 @@
   %table.data
     %thead
       %tr
-        %th Number
-        %th Customer
-        %th Status
-        %th Products
-        %th Total
-        %th Payment
+        %th= I18n.t("shoppe.words.number")
+        %th= I18n.t("shoppe.words.customer")
+        %th= I18n.t("shoppe.words.status")
+        %th= I18n.t("shoppe.words.products")
+        %th= I18n.t("shoppe.words.total")
+        %th= I18n.t("shoppe.words.payment")
     %tbody
       - if @orders.empty?
         %tr.empty

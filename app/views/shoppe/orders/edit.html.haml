@@ -18,4 +18,4 @@
 
   %p.submit
     = f.submit I18n.t("shoppe.words.save") + " " + I18n.t("shoppe.orders.one"), :class => 'button green'
-    = link_to "Cancel", @order, :class => 'button'
+    = link_to I18n.t("shoppe.words.cancel"), @order, :class => 'button'
