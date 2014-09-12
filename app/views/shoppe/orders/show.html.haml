@@ -2,7 +2,7 @@
 
 = content_for :header do
   %p.buttons
-    = link_to I18n.translate("shoppe.edit"), [:edit, @order], :class => 'button'
+    = link_to I18n.translate("shoppe.words.edit"), [:edit, @order], :class => 'button'
     - if @order.accepted?
       = link_to I18n.translate("shoppe.orders.despatch_note"), [:despatch_note, @order], :class => 'button', :rel => 'print'
     = link_to I18n.translate("shoppe.orders.back"), :orders, :class => 'button grey'

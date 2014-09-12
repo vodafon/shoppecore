@@ -24,9 +24,10 @@ en:
       despatch_note: Despatch Note
       order_items: Order Items
       payments: Payments
-
-    cancel: Cancel
-    edit: Edit
+      one_edit: Edit Order
+      one: Order
+      one_back: Back to order
+      ordered_products: Ordered Products
 
     words:
       name: Name
@@ -36,6 +37,9 @@ en:
       email: Email
       telephone: Telephone
       weight: Weight
+      cancel: Cancel
+      edit: Edit
+      notes: Notes
 
     settings:
       
