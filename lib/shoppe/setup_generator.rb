@@ -236,7 +236,7 @@ end
   </ul>
 <% end %>
       eos
-      create_file "app/views/orders/show.html.erb", <<-eos 
+      create_file "app/views/products/show.html.erb", <<-eos 
 <h2><%= @product.name %></h2>
 
 <% if @product.default_image %>
