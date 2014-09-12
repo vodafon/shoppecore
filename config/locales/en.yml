@@ -15,9 +15,9 @@ en:
         goto: &larr; Goto Store
         
     orders:
-        page_title: Orders
-        new_order: New Order
-        search_order: Search Order
+      page_title: Orders
+      new_order: New Order
+      search_order: Search Order
 
     settings:
       
