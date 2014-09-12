@@ -11,6 +11,7 @@ ru:
         users: Пользователи
         countries: Страны
         settings: Настройки
+        logout: Выйти
         
     settings:
       
