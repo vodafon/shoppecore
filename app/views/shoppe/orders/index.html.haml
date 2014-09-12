@@ -1,9 +1,9 @@
-- @page_title = 'Orders'
+- @page_title = I18n.translate("shoppe.orders.page_title")
 
 = content_for :header do
   %p.buttons
-    = link_to "New Order", :new_order, :class => 'button green'
-    = link_to "Search Orders", '#', :class => 'button', :rel => 'searchOrders'
+    = link_to I18n.translate("shoppe.orders.new_order"), :new_order, :class => 'button green'
+    = link_to I18n.translate("shoppe.orders.search_order"), '#', :class => 'button', :rel => 'searchOrders'
   %h2.orders
     Orders
     %span= page_entries_info @orders
