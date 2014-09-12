@@ -12,6 +12,7 @@ en:
         countries: Countries
         settings: Settings
         logout: Logout
+        goto: &larr; Goto Store
         
     settings:
       
