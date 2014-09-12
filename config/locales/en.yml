@@ -37,6 +37,11 @@ en:
       delivery_name: Delivery Name
       billing_address: Billing Address
 
+    products:
+      product_information: Product Information
+      product_information: Product Category
+      in_box: What's in the box?
+
     words:
       name: Name
       billing: Billing
@@ -58,6 +63,13 @@ en:
       products: Products
       total: Total
       payment: Payment
+      description: Description
+      short_description: Short Description
+      attributes: Attributes
+      value: Value
+      searchable: Searchable
+      public: Public
+      remove: Remove
 
     settings:
       

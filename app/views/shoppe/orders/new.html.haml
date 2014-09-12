@@ -1,14 +1,14 @@
-- @page_title = I18n.translate("shoppe.orders.new_order")
+- @page_title = I18n.t("shoppe.orders.new_order")
 = content_for :header do
-  %p.buttons= link_to I18n.translate("shoppe.orders.back"), :orders, :class => 'button grey'
+  %p.buttons= link_to I18n.t("shoppe.orders.back"), :orders, :class => 'button grey'
   %h2.orders
-    = I18n.translate("shoppe.orders.new_order")
+    = I18n.t("shoppe.orders.new_order")
 
 = form_for @order, :html => {:class => 'orderForm newOrder'} do |f|
   = f.error_messages
   = render 'form', :f => f
-  = field_set_tag I18n.translate("shoppe.orders.ordered_products"), :class => 'padded' do
+  = field_set_tag I18n.t("shoppe.orders.ordered_products"), :class => 'padded' do
     = render 'order_items_form', :f => f
   %p.submit
-    = f.submit I18n.translate("shoppe.orders.create_order"), :class => 'button green'
-    = link_to I18n.translate("shoppe.cancel"), :orders, :class => 'button grey'
+    = f.submit I18n.t("shoppe.orders.create_order"), :class => 'button green'
+    = link_to I18n.t("shoppe.words.cancel"), :orders, :class => 'button grey'
