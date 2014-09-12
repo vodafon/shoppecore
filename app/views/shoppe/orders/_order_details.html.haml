@@ -7,7 +7,7 @@
       %dd= @order.billing_address1
       %dd= @order.billing_address2
       - if @order.separate_delivery_address?
-        %dt= I18n.translate("shoppe.words.delivery") I18n.translate("shoppe.words.address")
+        %dt #{I18n.translate("shoppe.words.delivery")} #{I18n.translate("shoppe.words.address")}
         %dd= @order.delivery_name
         %dd= @order.delivery_address1
         %dd= @order.delivery_address2
