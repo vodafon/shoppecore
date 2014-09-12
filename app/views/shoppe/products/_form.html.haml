@@ -16,11 +16,17 @@
         %dt= f.label :sku, 'SKU'
         %dd= f.text_field :sku, :class => 'text'
     %dl
+      %dt= f.label :title
+      %dd= f.text_field :title, :class => 'text'
+    %dl
       %dt= f.label :description
       %dd= f.text_area :description, :class => 'text'
     %dl
       %dt= f.label :short_description
       %dd= f.text_area :short_description, :class => 'text'
+    %dl
+      %dt= f.label :keywords
+      %dd= f.text_area :keywords, :class => 'text'
     %dl
       %dt= f.label :in_the_box, "What's in the box?"
       %dd= f.text_area :in_the_box, :class => 'text'

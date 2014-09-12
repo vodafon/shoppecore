@@ -30,7 +30,7 @@ end
 
 lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
-pro = cat1.products.create!(:name => 'Yealink T20P', :sku => 'YL-SIP-T20P', :description => lorem, :short_description => 'If cheap & cheerful is what you’re after, the Yealink T20P is what you’re looking for.', :weight => 1.119, :price => 54.99, :cost_price => 44.99, :tax_rate => tax_rate, :featured => true)
+pro = cat1.products.create!(:name => 'Yealink T20P', :sku => 'YL-SIP-T20P', :title => "YL-SIP-T20P - Title", :description => lorem, :short_description => 'If cheap & cheerful is what you’re after, the Yealink T20P is what you’re looking for.', :weight => 1.119, :price => 54.99, :cost_price => 44.99, :tax_rate => tax_rate, :featured => true)
 pro.default_image_file = get_file('t20p.jpg')
 pro.save!
 pro.stock_level_adjustments.create(:description => 'Initial Stock', :adjustment => 17)

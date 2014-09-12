@@ -165,8 +165,10 @@ ActiveRecord::Schema.define(version: 20131102143930) do
     t.string   "name"
     t.string   "sku"
     t.string   "permalink"
+    t.string   "title"
     t.text     "description"
     t.text     "short_description"
+    t.text     "keywords"
     t.boolean  "active",                                      default: true
     t.decimal  "weight",              precision: 8, scale: 3, default: 0.0
     t.decimal  "price",               precision: 8, scale: 2, default: 0.0
