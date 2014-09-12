@@ -13,10 +13,10 @@
         %dd= @order.delivery_address2
       %dt= I18n.translate("shoppe.words.email")
       %dd= mail_to @order.email_address
-      %dt= I18n.translate("shoppe.words.telephone")
-      %dd= @order.phone_number
   .right
     %dl
+      %dt= I18n.translate("shoppe.words.telephone")
+      %dd= @order.phone_number
       %dt= I18n.translate("shoppe.words.weight")
       %dd= number_to_weight @order.total_weight
       - if @order.received?
