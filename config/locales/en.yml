@@ -21,8 +21,12 @@ en:
       back: Back to orders
       ordered_products: Order Products
       create_order: Create Order
+      despatch_note: Despatch Note
+      order_items: Order Items
+      payments: Payments
 
     cancel: Cancel
+    edit: Edit
 
     settings:
       

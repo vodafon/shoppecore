@@ -1,12 +1,12 @@
-- @page_title = 'Order #' + @order.number
+- @page_title = I18n.translate("shoppe.orders.page_title") + ' #' + @order.number
 
 = content_for :header do
   %p.buttons
-    = link_to "Edit", [:edit, @order], :class => 'button'
+    = link_to I18n.translate("shoppe.edit"), [:edit, @order], :class => 'button'
     - if @order.accepted?
-      = link_to "Despatch Note", [:despatch_note, @order], :class => 'button', :rel => 'print'
-    = link_to "Back to orders", :orders, :class => 'button grey'
-  %h2.orders Order <b>##{@order.number}</b>
+      = link_to I18n.translate("shoppe.orders.despatch_note"), [:despatch_note, @order], :class => 'button', :rel => 'print'
+    = link_to I18n.translate("shoppe.orders.back"), :orders, :class => 'button grey'
+  %h2.orders #{I18n.translate("shoppe.orders.page_title")} <b>##{@order.number}</b>
 
 #order
 
@@ -19,10 +19,10 @@
       present you can only view the items which are within the order.
 
 
-  = field_set_tag "Order Items", :class => 'padded' do
+  = field_set_tag I18n.translate("shoppe.orders.order_items"), :class => 'padded' do
     = render 'order_items'
   
   - if @order.received?
-    = field_set_tag "Payments", :class => 'padded orderPayments' do
+    = field_set_tag I18n.translate("shoppe.orders.payments"), :class => 'padded orderPayments' do
       = render 'payments_table'
       = render 'payments_form'
