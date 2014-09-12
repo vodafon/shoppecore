@@ -3,6 +3,8 @@
     %dl
       %dt= I18n.translate("shoppe.words.name")
       %dd= @order.full_name
+      %dt= I18n.translate("shoppe.words.email")
+      %dd= mail_to @order.email_address
       %dt #{I18n.translate("shoppe.words.billing")}#{@order.separate_delivery_address? ? '' : "/" + I18n.translate("shoppe.words.delivery")} #{I18n.translate("shoppe.words.address")}
       %dd= @order.billing_address1
       %dd= @order.billing_address2
@@ -11,8 +13,6 @@
         %dd= @order.delivery_name
         %dd= @order.delivery_address1
         %dd= @order.delivery_address2
-      %dt= I18n.translate("shoppe.words.email")
-      %dd= mail_to @order.email_address
   .right
     %dl
       %dt= I18n.translate("shoppe.words.telephone")
