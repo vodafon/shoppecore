@@ -39,8 +39,9 @@ en:
 
     products:
       product_information: Product Information
-      product_information: Product Category
+      product_category: Product Category
       in_box: What's in the box?
+      add_attribute: Add Attribute
 
     words:
       name: Name

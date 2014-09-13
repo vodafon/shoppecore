@@ -15,6 +15,7 @@ module Shoppe
     #
     # @return [Shoppe::ProductCategory]
     belongs_to :product_category, :class_name => 'Shoppe::ProductCategory'
+    has_many :reviews, :class_name => 'Shoppe::ProductReview'
     
     # The product's tax rate
     #

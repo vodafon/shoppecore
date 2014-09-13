@@ -107,6 +107,7 @@ class CreateShoppeInitialSchema < ActiveRecord::Migration
       t.string   "name"
       t.string   "permalink"
       t.text     "description"
+      t.integer  "vendor_id"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -114,6 +115,7 @@ class CreateShoppeInitialSchema < ActiveRecord::Migration
     create_table "shoppe_products" do |t|
       t.integer  "parent_id"
       t.integer  "product_category_id"
+      t.integer  "market_id"
       t.string   "name"
       t.string   "sku"
       t.string   "permalink"
@@ -167,10 +169,29 @@ class CreateShoppeInitialSchema < ActiveRecord::Migration
       t.datetime "created_at"
       t.datetime "updated_at"
     end
+    create_table "shoppe_product_reviews" do |t|
+      t.integer  "product_id"
+      t.integer "grade"
+      t.integer "agree"
+      t.integer "reject"
+      t.integer "review_id"
+      t.boolean "anonymous"
+      t.string  "author"
+      t.text    "text"
+      t.text    "pro"
+      t.text    "contra"
+      t.integer "convenience_grade"
+      t.integer "price_grade"
+      t.integer "quality_grade"
+      t.boolean "public", :default => false
+      t.timestamps
+    end
+    add_index(:shoppe_product_reviews, [:product_id, :grade, :agree])
   end
   
   def down
-    [:users, :tax_rates, :stock_level_adjustments, :settings, :products, :product_categories, :product_attributes, :orders, :order_items, :delivery_services, :delivery_service_prices, :countries].each do |table|
+    remove_index(:shoppe_product_reviews, [:product_id, :grade, :agree])
+    [:users, :tax_rates, :stock_level_adjustments, :settings, :products, :product_categories, :product_attributes, :orders, :order_items, :delivery_services, :delivery_service_prices, :countries, :product_reviews].each do |table|
       drop_table "shoppe_#{table}"
     end
   end
