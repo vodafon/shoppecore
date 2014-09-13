@@ -1,0 +1,8 @@
+<% @page_title = "Rewiews" %>
+<% content_for :header do %>
+  <p class="buttons">
+    <%= link_to "New product", :new_product, :class => 'button green'   %>
+  </p>
+  <h2 class="products">Reviews</h2>
+<% end %>
+<%= render 'table', :reviews => @product_reviews %>

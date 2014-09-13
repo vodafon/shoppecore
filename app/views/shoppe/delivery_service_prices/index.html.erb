@@ -1,0 +1,37 @@
+<% @page_title = "Delivery Services" %>
+<% content_for :header do %>
+  <p class="buttons">
+    <%= link_to "New price", [:new, @delivery_service, :delivery_service_price], :class => 'button green' %>
+    <%= link_to "Back to delivery services", :delivery_services, :class => 'button' %>
+  </p>
+  <h2 class="delivery_services">Delivery Pricing for <%= @delivery_service.name %></h2>
+<% end %>
+<div class="table">
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Weight Allowance</th>
+        <th>Price</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for price in @delivery_service_prices %>
+        <tr>
+          <td>
+            <%= link_to price.code, [:edit, @delivery_service, price] %>
+          </td>
+          <td><%= number_to_weight price.min_weight %> → <%= number_to_weight price.max_weight %></td>
+          <td>
+            <%= number_to_currency(price.price) %>
+          </td>
+          <td>
+            <%= number_to_currency price.cost_price %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

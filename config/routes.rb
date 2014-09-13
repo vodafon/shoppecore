@@ -4,6 +4,7 @@ Shoppe::Engine.routes.draw do
   resources :product_categories
   resources :products do
     resources :variants
+    resources :product_reviews
   end
   resources :orders do
     post :search, :on => :collection

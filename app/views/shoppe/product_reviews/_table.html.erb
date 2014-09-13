@@ -1,0 +1,36 @@
+<div class="table">
+<table class="data">
+  <thead>
+    <tr>
+      <th width="20%">Author</th>
+      <th width="40%">Text</th>
+      <th width="25%">Pro</th>
+      <th width="15%">Contra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if reviews.empty? %>
+      <tr class="empty">
+        <td colspan="4">No reviews to display.</td>
+      </tr>
+    <% else %>
+      <% for review in reviews %>
+        <tr>
+          <td>
+            <%= review.author %>
+          </td>
+          <td>
+            <%= review.text %>
+          </td>
+          <td>
+            <%= review.pro %>
+          </td>
+          <td>
+            <%= review.contra %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+</div>
