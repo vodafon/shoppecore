@@ -1,7 +1,7 @@
 module Shoppe
   class ProductReviewsController < Shoppe::ApplicationController
     before_filter { @active_nav = :products }
-    before_filter { params[:id] && @product = Shoppe::Product.root.find(params[:id]) }
+    before_filter { params[:id] && @product = Shoppe::Product.root.find(params[:product_id]) }
   
     def index
       @product_reviews = @product.reviews.all
