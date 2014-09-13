@@ -1,0 +1,67 @@
+<%= form_for @country do |f| %>
+  <%= f.error_messages %>
+  <%= field_set_tag "User Details" do %>
+    <div class="splitContainer">
+      <dl class="third">
+        <dt>
+          <%= f.label :name %>
+        </dt>
+        <dd>
+          <%= f.text_field :name, :class => 'focus text' %>
+        </dd>
+      </dl>
+      <dl class="third">
+        <dt>
+          <%= f.label :code2, "ISO 3166-alpha-2" %>
+        </dt>
+        <dd>
+          <%= f.text_field :code2, :class => 'text' %>
+        </dd>
+      </dl>
+      <dl class="third">
+        <dt>
+          <%= f.label :code3, "ISO 3166-alpha-3" %>
+        </dt>
+        <dd>
+          <%= f.text_field :code3, :class => 'text' %>
+        </dd>
+      </dl>
+    </div>
+    <div class="splitContainer">
+      <dl class="third">
+        <dt>
+          <%= f.label :continent %>
+        </dt>
+        <dd>
+          <%= f.text_field :continent, :class => 'text' %>
+        </dd>
+      </dl>
+      <dl class="third">
+        <dt>
+          <%= f.label :tld, "TLD" %>
+        </dt>
+        <dd>
+          <%= f.text_field :tld, :class => 'text' %>
+        </dd>
+      </dl>
+      <dl class="third">
+        <dt>
+          <%= f.label :eu_member, "EU Member?" %>
+        </dt>
+        <dd class="checkbox">
+          <%= f.check_box :eu_member %>
+          <%= f.label :eu_member, 'Country is an EU member?' %>
+        </dd>
+      </dl>
+    </div>
+  <% end %>
+  <p class="submit">
+    <% unless @country.new_record? %>
+      <span class="right">
+        <%= link_to "Delete", @country, :class => 'button purple', :method => :delete, :data => {:confirm => "Are you sure you wish to remove this country?"} %>
+      </span>
+    <% end %>
+    <%= f.submit :class => 'button green' %>
+    <%= link_to "Cancel", :countries, :class => 'button' %>
+  </p>
+<% end %>

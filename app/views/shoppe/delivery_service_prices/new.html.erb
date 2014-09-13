@@ -1,0 +1,8 @@
+<% @page_title = "Delivery Services" %>
+<% content_for :header do %>
+  <p class="buttons">
+    <%= link_to "Back to prices", [@delivery_service, :delivery_service_prices], :class => 'button' %>
+  </p>
+  <h2 class="delivery_services">Delivery Services</h2>
+<% end -%>
+<%= render 'form' %>

@@ -1,0 +1,45 @@
+<% @page_title = "Countries" %>
+<%= content_for :header do %>
+  <p class="buttons">
+    <%= link_to "New country", :new_country, :class => 'button green' %>
+  </p>
+  <h2 class="countries">Countries</h2>
+<% end %>
+<div class="table">
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ISO 3166-1-alpha-2</th>
+        <th>ISO 3166-1-alpha-3</th>
+        <th>Continent</th>
+        <th>TLD</th>
+        <th>EU?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for country in @countries %>
+        <tr>
+          <td>
+            <%= link_to country.name, [:edit, country] %>
+          </td>
+          <td>
+            <%= country.code2 %>
+          </td>
+          <td>
+            <%= country.code3 %>
+          </td>
+          <td>
+            <%= country.continent %>
+          </td>
+          <td>
+            <%= country.tld %>
+          </td>
+          <td>
+            <%= boolean_tag country.eu_member? %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

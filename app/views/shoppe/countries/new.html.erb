@@ -1,0 +1,8 @@
+<% @page_title = "Countries" %>
+<%= content_for :header do %>
+  <p class="buttons">
+    <%= link_to "Back to countries", :countries, :class => 'button' %>
+  </p>
+  <h2 class="countries">Countries</h2>
+<% end %>
+<%= render 'form' %>
