@@ -9,7 +9,7 @@ require 'ransack'
 
 require 'nifty/utils'
 require 'nifty/key_value_store'
-require 'nifty/attachments'
+#require 'nifty/attachments'
 require 'nifty/dialog'
 
 module Shoppe
@@ -57,3 +57,4 @@ end
 
 # Start your engines.
 require "shoppe/engine"
+require 'carrierwave'

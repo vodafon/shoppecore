@@ -3,9 +3,6 @@ module Shoppe
   
     self.table_name = 'shoppe_product_categories'
   
-    # Categories have an image attachment
-    attachment :image
-  
     # All products within this category
     has_many :products, :dependent => :restrict_with_exception, :class_name => 'Shoppe::Product'
     

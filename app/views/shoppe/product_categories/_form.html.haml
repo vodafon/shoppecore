@@ -11,13 +11,6 @@
     %dl
       %dt= f.label :description
       %dd= f.text_area :description, :class => 'text'
-  = field_set_tag "Attachments" do
-
-    %dl
-      %dt= f.label :image_file, "Image"
-      %dd
-        = attachment_preview @product_category.image
-        %p= f.file_field :image_file
 
   %p.submit
     - unless @product_category.new_record?

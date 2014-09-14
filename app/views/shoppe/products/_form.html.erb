@@ -146,32 +146,21 @@
     </div>
   <% end %>
   <%= field_set_tag "Attachments" do %>
-    <div class="splitContainer">
-      <dl class="half">
+    <div>
+      <dl>
         <dt>
-          <%= f.label :default_image_file, "Default Image" %>
+          <%= f.label :image, "Изображение" %>
         </dt>
         <dd>
-          <%= attachment_preview @product.default_image %>
+        <%= image_tag @product.image_url, :width => "150px" %>
           <p>
-            <%= f.file_field :default_image_file %>
-          </p>
-        </dd>
-      </dl>
-      <dl class="half">
-        <dt>
-          <%= f.label :data_sheet_file, "Datasheet" %>
-        </dt>
-        <dd>
-          <%= attachment_preview @product.data_sheet %>
-          <p>
-            <%= f.file_field :data_sheet_file %>
+          <%= f.file_field :image %>
+          <%= f.hidden_field :image_cache %>
           </p>
         </dd>
       </dl>
     </div>
   <% end %>
-  <% unless @product.has_variants?    %>
     <%= field_set_tag "Pricing" do %>
       <div class="splitContainer">
         <dl class="third">
@@ -210,46 +199,24 @@
         </dl>
       </div>
     <% end %>
-    <%= field_set_tag "Stock Control" do %>
-      <div class="splitContainer">
-        <dl class="half">
-          <dt>
-            <%= f.label :weight %>
-          </dt>
-          <dd>
-            <%= f.text_field :weight, :class => 'text' %>
-          </dd>
-        </dl>
-        <dl class="half">
-          <dt>
-            <%= f.label :stock_control %>
-          </dt>
-          <dd class="checkbox">
-            <%= f.check_box :stock_control %>
-            <%= f.label :stock_control, "Enable stock control for this product?" %>
-          </dd>
-        </dl>
-      </div>
-    <% end %>
-  <% end %>
   <%= field_set_tag "Website Properties" do %>
     <div class="splitContainer">
       <dl class="half">
         <dt>
-          <%= f.label :active, "On sale?" %>
+          <%= f.label :active, "Опубликовать?" %>
         </dt>
         <dd class="checkbox">
           <%= f.check_box :active %>
-          <%= f.label :active, "If checked, this product will be displayed within the public store" %>
+          <%= f.label :active, "Опубликовать?" %>
         </dd>
       </dl>
       <dl class="half">
         <dt>
-          <%= f.label :featured, "Featured?" %>
+          <%= f.label :featured, "На главной?" %>
         </dt>
         <dd class="checkbox">
           <%= f.check_box :featured %>
-          <%= f.label :featured, "If checked, this product will appear on your homepage" %>
+          <%= f.label :featured, "Разместить этот товар на главной странице" %>
         </dd>
       </dl>
     </div>
@@ -260,7 +227,7 @@
         <%= link_to "Delete", @product, :class => 'button purple', :method => :delete, :data => {:confirm => "Are you sure you wish to remove this product?"} %>
       </span>
     <% end %>
-    <%= f.submit :class => 'button green' %>
-    <%= link_to "Cancel", :products, :class => 'button' %>
+    <%= f.submit I18n.t("shoppe.words.save"), :class => 'button green' %>
+    <%= link_to I18n.t("shoppe.words.cancel"), :products, :class => 'button' %>
   </p>
 <% end %>

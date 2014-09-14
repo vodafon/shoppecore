@@ -8,38 +8,42 @@ module Shoppe
     end
   
     def new
-      @product_category = Shoppe::ProductCategory.new
+      @product_review = Shoppe::ProductReview.new
     end
   
     def create
-      @product_category = Shoppe::ProductCategory.new(safe_params)
-      if @product_category.save
-        redirect_to :product_categories, :flash => {:notice => "Category has been created successfully"}
+      @product_review = Shoppe::ProductReview.new(safe_params)
+      @product.reviews << @product_review
+      if @product_review.save
+        redirect_to :product_product_reviews, :flash => {:notice => "Отзыв добавлен"}
       else
         render :action => "new"
       end
     end
   
     def edit
+      @product_review = Shoppe::ProductReview.find(params[:id])
     end
   
     def update
-      if @product_category.update(safe_params)
-        redirect_to [:edit, @product_category], :flash => {:notice => "Category has been updated successfully"}
+      @product_review = Shoppe::ProductReview.find(params[:id])
+      if @product_review.update(safe_params)
+        redirect_to [:edit, @product, @product_review], :flash => {:notice => "Отзыв обновлен"}
       else
         render :action => "edit"
       end
     end
   
     def destroy
-      @product_category.destroy
-      redirect_to :product_categories, :flash => {:notice => "Category has been removed successfully"}
+      @product_review = Shoppe::ProductReview.find(params[:id])
+      @product_review.destroy
+      redirect_to :product_product_reviews, :flash => {:notice => "Отзыв удален"}
     end
   
     private
   
     def safe_params
-      params[:product_category].permit(:name, :permalink, :description, :image_file)
+      params[:product_review].permit(:author, :text, :pro, :contra, :grade, :convenience_grade, :price_grade, :quality_grade, :public, :agree, :reject)
     end
   
   end

@@ -1,8 +1,8 @@
-<% @page_title = "Products" %>
+<% @page_title = I18n.t("shoppe.products.page_title") %>
 <% content_for :header do %>
   <p class="buttons">
-    <%= link_to "New product", :new_product, :class => 'button green'   %>
+    <%= link_to I18n.t("shoppe.products.add"), :new_product, :class => 'button green'   %>
   </p>
-  <h2 class="products">Products</h2>
+  <h2 class="products"><%= I18n.t("shoppe.products.page_title") %></h2>
 <% end %>
 <%= render 'table', :products => @products %>

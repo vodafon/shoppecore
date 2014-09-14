@@ -2,16 +2,16 @@
   <table class="data">
     <thead>
       <tr>
-        <th width="20%">SKU</th>
-        <th width="40%">Name</th>
-        <th width="25%">Price/Variants</th>
-        <th width="15%">Reviews</th>
+        <th width="20%">Артикул</th>
+        <th width="40%">Название</th>
+        <th width="25%">Цена</th>
+        <th width="15%">Отзывы</th>
       </tr>
     </thead>
     <tbody>
       <% if products.empty? %>
         <tr class="empty">
-          <td colspan="4">No products to display.</td>
+          <td colspan="4">Нет товаров.</td>
         </tr>
       <% else %>
         <% for category, products in products %>
@@ -28,46 +28,12 @@
               <td>
                 <%= link_to product.name, [:edit, product] %>
               </td>
-              <% if product.has_variants? %>
-                <td class="table" colspan="2">
-                  <table class="data">
-                    <% for variant in product.variants %>
-                      <tr>
-                        <td width="40%">
-                          <%= link_to variant.name, edit_product_variant_path(product, variant) %>
-                        </td>
-                        <td width="30%">
-                          <%= number_to_currency variant.price %>
-                        </td>
-                        <td width="30%">
-                          <% if variant.stock_control? %>
-                            <span class="float-right">
-                              <%= link_to "Edit", stock_level_adjustments_path(:item_type => variant.class, :item_id => variant.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'} %>
-                            </span>
-                            <%= boolean_tag(variant.in_stock?, nil, :true_text => variant.stock, :false_text => 'No stock') %>
-                          <% else %>
-                            &#8734;
-                          <% end %>
-                        </td>
-                      </tr>
-                    <% end %>
-                  </table>
-                </td>
-              <% else %>
-                <td>
-                  <%= number_to_currency product.price %>
-                </td>
-                <td>
-                  <% if product.stock_control? %>
-                    <span class="float-right">
-                      <%= link_to "Edit", stock_level_adjustments_path(:item_type => product.class, :item_id => product.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'} %>
-                    </span>
-                    <%= boolean_tag(product.in_stock?, nil, :true_text => product.stock, :false_text => 'No stock') %>
-                  <% else %>
-                    &#8734;
-                  <% end %>
-                </td>
-              <% end %>
+              <td>
+                <%= product.price %>
+              </td>
+              <td>
+                <%= link_to product.reviews.count, product_product_reviews_path(:product_id => product.id) %>
+              </td>
             </tr>
           <% end %>
         <% end %>

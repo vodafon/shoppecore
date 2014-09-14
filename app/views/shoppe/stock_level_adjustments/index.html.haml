@@ -1,17 +1,17 @@
-- @page_title = "Stock Levels - #{@item.name}"
+- @page_title = "Наличие - #{@item.name}"
 = content_for :header do
   %p.buttons
     - case @item
     - when Shoppe::Product
       - @active_nav = :products
-      = link_to "Edit product", [:edit, @item], :class => 'button'
-      = link_to "Back to product list", :products, :class => 'button'
+      = link_to "Назад к товару", [:edit, @item], :class => 'button'
+      = link_to "Все товары", :products, :class => 'button'
       
   %h2.products Stock Levels for #{@item.name}
 
 .table
   %p.info
-    Current stock level is <b>#{@item.stock}</b>
+    Сейчас в наличии - <b>#{@item.stock}</b>
     %span.float-right= page_entries_info @stock_level_adjustments
 
   = form_for @new_sla do |f|
@@ -20,9 +20,9 @@
     %table.data
       %thead
         %tr
-          %th{:width => '25%'} Date
-          %th{:width => '50%'} Description
-          %th{:width => '25%'} Adjustment
+          %th{:width => '25%'} Дата
+          %th{:width => '50%'} Описание
+          %th{:width => '25%'} Количество
       %tbody
         %tr.form
           %td

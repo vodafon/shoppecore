@@ -8,9 +8,7 @@ module Shoppe
     require_dependency 'shoppe/product/variants'
     
     # Products have a default_image and a data_sheet
-    attachment :default_image
-    attachment :data_sheet
-  
+    mount_uploader :image, ImageUploader
     # The product's category
     #
     # @return [Shoppe::ProductCategory]
