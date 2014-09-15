@@ -5,7 +5,7 @@ module Shoppe
     before_filter { params[:id] && @product = Shoppe::Product.root.find(params[:id]) }
   
     def index
-      @products = Shoppe::Product.root.includes(:stock_level_adjustments, :product_category, :variants).order(:name).group_by(&:product_category).sort_by { |cat,pro| cat.name }
+      @products = Shoppe::Product.root.includes(:stock_level_adjustments, :product_category, :variants).order("reviews_count DESC").group_by(&:product_category).sort_by { |cat,pro| cat.name }
     end
   
     def new

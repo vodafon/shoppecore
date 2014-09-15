@@ -13,7 +13,7 @@ module Shoppe
     #
     # @return [Shoppe::ProductCategory]
     belongs_to :product_category, :class_name => 'Shoppe::ProductCategory'
-    has_many :reviews, :class_name => 'Shoppe::ProductReview'
+    has_many :reviews, :class_name => 'Shoppe::ProductReview', :counter_cache => true
     
     # The product's tax rate
     #
@@ -44,6 +44,8 @@ module Shoppe
     
     # Before validation, set the permalink if we don't already have one
     before_validation { self.permalink = self.name.parameterize if self.permalink.blank? && self.name.is_a?(String) }
+
+    after_save :update_counter_cache
   
     # All active products
     scope :active, -> { where(:active => true) }
@@ -102,6 +104,10 @@ module Shoppe
       product_ids = Shoppe::ProductAttribute.searchable.where(:key => key, :value => values).pluck(:product_id).uniq
       where(:id => product_ids)
     end
-  
+
+    private
+    def update_counter_cache
+      update_attribute(:reviews_count, self.reviews.length) unless self.reviews.length == self.reviews_count
+    end
   end
 end

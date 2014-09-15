@@ -3,20 +3,21 @@
     <thead>
       <tr>
         <th width="20%">Артикул</th>
-        <th width="40%">Название</th>
+        <th width="30%">Название</th>
         <th width="25%">Цена</th>
         <th width="15%">Отзывы</th>
+        <th width="10%">Опубликован?</th>
       </tr>
     </thead>
     <tbody>
       <% if products.empty? %>
         <tr class="empty">
-          <td colspan="4">Нет товаров.</td>
+          <td colspan="5">Нет товаров.</td>
         </tr>
       <% else %>
         <% for category, products in products %>
           <tr>
-            <th colspan="4">
+            <th colspan="5">
               <%= category.name %>
             </th>
           </tr>
@@ -33,6 +34,9 @@
               </td>
               <td>
                 <%= link_to product.reviews.count, product_product_reviews_path(:product_id => product.id) %>
+              </td>
+              <td>
+                <%=raw product.active ? "<b>+</b>" : "-" %>
               </td>
             </tr>
           <% end %>
