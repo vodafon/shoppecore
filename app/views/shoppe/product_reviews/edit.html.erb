@@ -1,6 +1,7 @@
 <% @page_title = "Отзывы" %>
 <% content_for :header do %>
   <p class="buttons">
+    <%= link_to "К товару", [:edit, @product], :class => 'button' %>
     <%= link_to "Назад к отзывам", :product_product_reviews, :class => 'button' %>
     <%= link_to "Все товары", :products, :class => 'button' %>
   </p>

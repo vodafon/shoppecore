@@ -15,7 +15,7 @@
       </tr>
     <% else %>
       <% for review in reviews %>
-        <tr>
+        <tr class="<%= "strong" if review.public %>">
           <td>
             <%= link_to review.author, edit_product_product_review_path(:id => review.id) %>
           </td>

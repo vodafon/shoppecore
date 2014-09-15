@@ -1,6 +1,6 @@
 <%= form_for [@product, @product_review], :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
-  <%= field_set_tag "Отзыв" do %>
+  <%= field_set_tag "Отзыв к товару #{@product.product_category.name} - #{@product.name}" do %>
     <dl>
       <dt>
         <%= f.label :author, "Имя" %>
