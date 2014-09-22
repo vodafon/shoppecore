@@ -1,10 +1,10 @@
-<% @page_title = "Товары" %>
+<% @page_title = I18n.t("shoppe.products.page_title") %>
 <% content_for :header do %>
   <p class="buttons">
     <%= link_to "Наличие", stock_level_adjustments_path(:item_id => @product.id, :item_type => @product.class), :class => 'button', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'} %>
     <%= link_to "Все товары", :products, :class => 'button' %>
     <%= link_to "Отзывы", product_product_reviews_path(:product_id => @product.id), :class => 'button' %>
   </p>
-  <h2 class="products">Товары</h2>
+  <h2 class="products"><%= I18n.t("shoppe.products.page_title") %></h2>
 <% end %>
 <%= render 'form' %>

@@ -1,0 +1,32 @@
+<div class="table">
+  <table class="data">
+    <thead>
+      <tr>
+        <th width="50%">Название</th>
+        <th width="35%">URL</th>
+        <th width="15%">Опубликован?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if pages.empty? %>
+        <tr class="empty">
+          <td colspan="3">Нет страниц.</td>
+        </tr>
+      <% else %>
+          <% for page in pages %>
+            <tr>
+              <td>
+                <%= link_to page.name, edit_page_path(page.id) %>
+              </td>
+              <td>
+                <%= page.permalink %>
+              </td>
+              <td>
+                <%=raw page.info ? "<b>+</b>" : "-" %>
+              </td>
+            </tr>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

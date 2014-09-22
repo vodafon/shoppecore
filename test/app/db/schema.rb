@@ -216,5 +216,15 @@ ActiveRecord::Schema.define(version: 20131102143930) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+  
+  create_table "shoppe_pages", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "text"
+    t.boolean  "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

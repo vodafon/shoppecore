@@ -1,0 +1,8 @@
+<% @page_title = I18n.t("shoppe.pages.page_title") %>
+<% content_for :header do %>
+  <p class="buttons">
+    <%= link_to "Назад к страницам", :pages, :class => 'button' %>
+  </p>
+  <h2 class="products"><%= I18n.t("shoppe.pages.page_title") %></h2>
+<% end %>
+<%= render 'form' %>

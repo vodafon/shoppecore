@@ -1,0 +1,52 @@
+<%= form_for @page, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+    <div class="splitContainer">
+      <dl class="third">
+        <dt>
+          <%= f.label :name, I18n.t("shoppe.words.name") %>
+        </dt>
+        <dd>
+          <%= f.text_field :name, :class => 'text focus' %>
+        </dd>
+      </dl>
+      <dl class="third">
+        <dt>
+          <%= f.label :permalink, "URL" %>
+        </dt>
+        <dd>
+          <%= f.text_field :permalink, :class => 'text' %>
+        </dd>
+      </dl>
+      <dl class="third">
+        <dd class="checkbox">
+          <%= f.check_box :info %>
+          <%= f.label :info, "Инфо?" %>
+        </dd>
+      </dl>
+    </div>
+    <dl>
+      <dt>
+        <%= f.label :title, "Meta Title" %>
+      </dt>
+      <dd>
+        <%= f.text_field :title, :class => 'text' %>
+      </dd>
+    </dl>
+    <dl class="big-text">
+      <dt>
+        <%= f.label :text, I18n.t("shoppe.words.text") %>
+      </dt>
+      <dd>
+        <%= f.text_area :text, :class => 'text' %>
+      </dd>
+    </dl>
+  <p class="submit">
+    <% unless @page.new_record? %>
+      <span class="right">
+        <%= link_to "Удалить", @page, :class => 'button purple', :method => :delete, :data => {:confirm => "Вы уверены что хотите удалить эту страницу?"} %>
+      </span>
+    <% end %>
+    <%= f.submit I18n.t("shoppe.words.save"), :class => 'button green' %>
+    <%= link_to I18n.t("shoppe.words.cancel"), :pages, :class => 'button' %>
+  </p>
+<% end %>

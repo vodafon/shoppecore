@@ -5,6 +5,7 @@ en:
       admin_primary:
         orders: Orders
         products: Products
+        pages: Pages
         product_categories: Product Categories
         delivery_services: Delivery Services
         tax_rates: Tax Rates
@@ -45,6 +46,10 @@ en:
       page_title: Products
       add: New Product
 
+    pages:
+      page_title: Pages
+      add: New Page
+    
     words:
       name: Name
       billing: Billing
@@ -73,6 +78,7 @@ en:
       searchable: Searchable
       public: Public
       remove: Remove
+      text: Text
 
     settings:
       

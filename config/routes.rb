@@ -2,6 +2,7 @@ Shoppe::Engine.routes.draw do
   
   get 'attachment/:id/:filename.:extension' => 'attachments#show'
   resources :product_categories
+  resources :pages
   resources :products do
     resources :variants
     resources :product_reviews

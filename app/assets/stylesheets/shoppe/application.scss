@@ -223,7 +223,7 @@ header.main {
 				}
 			}
 		}
-		p.submit {margin:0; background:#fff; border:1px solid #dce2eb; padding:25px; }
+		p.submit {margin-top:10px; background:#fff; border:1px solid #dce2eb; padding:25px; }
 		p.submit .button { margin-right:5px;}
 		p.submit .right .button {margin-left:5px; margin-right:0;}
 		p.submit span.right { float:right;}
@@ -549,4 +549,8 @@ div.r_text {
 
 tr.strong td {
   font-weight: bold !important;
+}
+
+.big-text textarea.text {
+  height: 250px;
 }
