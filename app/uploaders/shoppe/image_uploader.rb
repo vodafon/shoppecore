@@ -4,8 +4,8 @@ module Shoppe
   class ImageUploader < CarrierWave::Uploader::Base
 
     # Include RMagick or MiniMagick support:
-    # include CarrierWave::RMagick
-    # include CarrierWave::MiniMagick
+    #include CarrierWave::RMagick
+     include CarrierWave::MiniMagick
 
     # Choose what kind of storage to use for this uploader:
     storage :file
@@ -25,6 +25,17 @@ module Shoppe
     #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
     # end
 
+     version :special do
+       process :resize_to_fill => [60, 60]
+     end
+     
+     version :featured do
+       process :resize_to_fill => [152, 152]
+     end
+     
+     version :page do
+       process :resize_to_fill => [350, 350]
+     end
     # Process files as they are uploaded:
     # process :scale => [200, 300]
     #
